@@ -1,6 +1,9 @@
 ﻿
 using System.ComponentModel.Design;
 using System.Globalization;
+
+using System.Numerics;
+
 using System.Reflection.Metadata;
 //Console.WriteLine("Hello, World!");
 //Console.WriteLine("stoj"); // 
@@ -49,7 +52,10 @@ using System.Reflection.Metadata;
 //int[] number = { 1, 2, 3, 3 };
 //Console.WriteLine(number[0]);
 //Console.WriteLine("dlugosc tablicy: " + number.Length);
+//zadanie1();
+
 zadanie1();
+
 static void zadanie1()
 {
     // deklaracja zmiennych
@@ -80,17 +86,71 @@ static void zadanie1()
     }
     else { Console.WriteLine("To nie jest równanie kwadratowe!"); }
 }
-static void zadanie2()
-{
-    Console.WriteLine("K A L K U L A T O R ")
 
-
-}
 static double doubleInput()
 {
-    Console.WriteLine("Podaj liczbe: ");
-    double input = Convert.ToDouble(Console.ReadLine());
-    return input;
+    throw new NotImplementedException();
 }
 
+menu();
+static void menu()
+{
+ViewMenu:
+    Console.WriteLine("K A L K U L A T O R ");
+    Console.WriteLine("1.Suma\n2 Różnica\n3 iloczyn\n4  iloraz\n5  Potegowanie\n6 Pierwiastek\n7 Funkcje trygonometryczne\n8 Wyjście");
+    Console.WriteLine("WYbierz Opcje: ");
+    int choice = Convert.ToInt32(Console.ReadLine());
+    switch (choice)
+    {
+        case 1: Total(); break;
+        case 2: Diference(); break;
+        // case 3: ProductNumber(); break;
+        // case 4: QuationNumber(); break;
+        //  case 5: PotentationNumber(); break;
+        //   case 6: SquareNumber(); break;
+        //  case 7: TrigonNumber(); break;
+        case 8: Close(); break;
+        default: Console.WriteLine("bledny wyor wybierz jeszcze raz opcje"); goto ViewMenu;
+    }
+
+    static void zadanie2()
+    {
+        Console.WriteLine("K A L K U L A T O R ");
+
+
+
+
+
+        static double doubleInput()
+        {
+            Console.WriteLine("Podaj liczbe: ");
+            double input = Convert.ToDouble(Console.ReadLine());
+            return input;
+        }
+
+
+
+        static void Total()
+        {
+            double a = doubleInput();
+            double b = doubleInput();
+            Console.WriteLine($"różnica wynosi {a}+{b}");
+        }
+
+
+        static void Diference()
+        {
+            double a = doubleInput();
+            double b = doubleInput();
+            Console.WriteLine($"różnica wynosi {a}-{b}");
+        }
+
+
+        static void Close()
+        {
+            Console.WriteLine("koniec programu");
+            System.Environment.Exit(1);
+        }
+    }
+}
 
